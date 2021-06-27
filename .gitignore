@@ -127,3 +127,4 @@ dmypy.json
 # Model data
 shared_bpe.model
 model_result
+bart_based
