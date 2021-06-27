@@ -1,5 +1,7 @@
 import PySimpleGUI as sg
-from model import generate_comment
+from model import DocstringGenerator
+
+comment_generator = DocstringGenerator()
 
 # Constants
 CODE_KEY = "CODE"
@@ -24,6 +26,6 @@ while True:
         break
     elif event == "Generate":
         code = values[CODE_KEY]
-        window[DOCSTRING_CODE].update(generate_comment(code, 25))
+        window[DOCSTRING_CODE].update(comment_generator.generate(code, 25))
 
 window.close()
