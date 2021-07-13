@@ -66,4 +66,6 @@ class DocstringGenerator:
                                     num_beams=10,
                                     max_length=max_length, no_repeat_ngram_size=4)
             generated = generated[0].cpu().tolist()
+            generated.remove(self.tokenizer.bos_token_id)
+            generated.remove(self.tokenizer.eos_token_id)
             return self.tokenizer.decode(generated)

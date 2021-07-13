@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{% block title %} Generate a comment for your python functions {% endblock %}</h1>
+<h1 align="center">{% block title %} Generate a comment for your python functions {% endblock %}</h1>
 
 <form method="post">
     <div class="form-group">
@@ -14,10 +14,10 @@
 
     <div class="form-group">
         <label for="comment">Generated comment</label>
-        <input type="text" name="comment"
+        <textarea name="comment"
                class="form-control"
-               readonly="true"
-               value="{{comment}}"></input>
+               rows=4
+               readonly="true">{{comment}}</textarea>
     </div>
 
     <div>
